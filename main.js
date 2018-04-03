@@ -4,7 +4,9 @@ $(function() {
 
     function loadMain(){
         $sexSelect = $('#sexo');
-        loadSexSelect();    
+        $razaSelect = $('#raza');
+        loadSexSelect();
+        cargarSelectDeRazas();    
     }
 
     /* 
@@ -19,4 +21,13 @@ $(function() {
           });
         });
     }    
+
+    function cargarSelectDeRazas(){
+        var razaServices = new RazaService();
+        razaServices.getRazas().then(function(razas) {
+            razas.forEach(function(raza) {
+                $razaSelect.append($('<option>').val(raza.id).text(raza.raza));
+          });
+        });
+    }
 });
