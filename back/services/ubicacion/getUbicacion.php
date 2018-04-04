@@ -1,10 +1,16 @@
 <?php 
-include ("conexion.php");
+	include("../../conexion/conexion.php");
 
-					$resultado = $mysqli->query("SELECT id FROM provincia");
-						if ($resultado->num_rows > 0) {
-							while ($fila = $resultado->fetch_assoc()){                
-								echo '<option value="'.$fila['i'].'">'.$fila['id'].'</option>';
-					        }
-                        }
-                ?>
+    header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    header("Pragma: no-cache"); // HTTP 1.0.
+    header("Expires: 0"); // Proxies.
+
+    $conn = new Conexion();
+    $sql = "Select * from provincias";
+    $provincias = $conn->consultar($sql);
+    $conn->cerrarConexion();
+    foreach($provincias as &$l){
+        $l = array_map('utf8_encode', $l);
+    }    
+    echo json_encode($provincias);
+?>

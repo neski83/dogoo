@@ -5,8 +5,12 @@ $(function() {
     function loadMain(){
         $sexSelect = $('#sexo');
         $razaSelect = $('#raza');
+        $localidadSelect = $('#localidad');
+        $transaccionSelect = $('#transaccion');
         loadSexSelect();
         cargarSelectDeRazas();    
+        cargarSelectDeLocalidad();
+        cargarSelectDeTransaccion();
     }
 
     /* 
@@ -16,8 +20,8 @@ $(function() {
     function loadSexSelect(){
         var sexServices = new SexService();
         sexServices.getSexs().then(function(sexs) {
-          sexs.forEach(function(sex) {
-            $sexSelect.append($('<option>').val(sex.id).text(sex.name));
+          sexs.forEach(function(sexo) {
+            $sexSelect.append($('<option>').val(sexo.id_sexo).text(sexo.sexo));
           });
         });
     }    
@@ -27,6 +31,24 @@ $(function() {
         razaServices.getRazas().then(function(razas) {
             razas.forEach(function(raza) {
                 $razaSelect.append($('<option>').val(raza.id).text(raza.raza));
+          });
+        });
+    }
+
+    function cargarSelectDeLocalidad(){
+        var provinciasServices = new ProvinciasService();
+        provinciasServices.getUbicacion().then(function(localidades) {
+            localidades.forEach(function(localidad) {
+                $localidadSelect.append($('<option>').val(localidad.id_provincia).text(localidad.provincia));
+          });
+        });
+    }
+
+    function cargarSelectDeTransaccion(){
+        var transaccionServices = new TransaccionService();
+        transaccionServices.getTransacciones().then(function(transaccion) {
+            transaccion.forEach(function(transaccion) {
+                $transaccionSelect.append($('<option>').val(transaccion.id_tipoTransaccion).text(transaccion.tipoTransaccion));
           });
         });
     }
