@@ -6,6 +6,7 @@ $(function() {
         $sexSelect = $('#sexo');
         $razaSelect = $('#raza');
         $localidadSelect = $('#localidad');
+        $departamentoSelect = $('#departamento');
         $transaccionSelect = $('#transaccion');
         loadSexSelect();
         cargarSelectDeRazas();    
@@ -52,4 +53,15 @@ $(function() {
           });
         });
     }
+
+    $('#localidad').change(function(){
+        var id_provincia = $localidadSelect.val();
+        $departamentoSelect.html("<option value='9999999999999' selected>No importa la localidad</option>");
+        var departamentosService = new DepartamentosService();
+        departamentosService.getDepartamentoDeProvincia(id_provincia).then(function(departamentos) {
+            departamentos.forEach(function(departamento) {
+                $departamentoSelect.append($('<option>').val(departamento.id_localidad).text(departamento.localidad));
+          });
+        });
+    });
 });

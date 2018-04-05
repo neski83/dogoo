@@ -5,5 +5,5 @@ class ProvinciasService {
 
     getUbicacion(){
         return $.getJSON( this.serviceUrl)   
-    }
+    }     
 }
