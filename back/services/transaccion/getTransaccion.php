@@ -6,7 +6,7 @@
     header("Expires: 0"); // Proxies.
 
     $conn = new Conexion();
-    $sql = "Select * from tipoTransaccion";
+    $sql = "SELECT * FROM `tipoTransaccion` WHERE id_tipoTransa = 2 or id_tipoTransa = 3 or id_tipoTransa = 4";
     $transaccion = $conn->consultar($sql);
     $conn->cerrarConexion();
     foreach($transaccion as &$l){

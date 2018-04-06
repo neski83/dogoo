@@ -24,9 +24,9 @@
                     <div class="col-sm-4 offset-md-1 py-4">
                     <h4 class="text-white">Tu cuenta</h4>
                     <ul class="list-unstyled">
-                        <li><a href="admCuenta.html" class="text-white">Iniciar sesion</a></li>
-                        <li><a href="admCuenta.html" class="text-white">Registrarse</a></li>
-                        <li><a href="admCuenta.html" class="text-white">Postular Perro</a></li>
+                        <li><a href="#" class="text-white">Iniciar sesion</a></li>
+                        <li><a href="#" class="text-white">Registrarse</a></li>
+                        <li><a href="#" class="text-white">Tu Perro</a></li>
                     </ul>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
             </div>
             <div class="navbar navbar-dark bg-dark box-shadow">
                 <div class="container d-flex justify-content-between">
-                <a href="#" class="navbar-brand d-flex align-items-center">
+                <a href="main.html" class="navbar-brand d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                     <strong>Dogoo</strong>
                 </a>
@@ -46,43 +46,50 @@
         </header>
     
         <main role="main">
-            <section class="jumbotron text-center">
-                <div class="container">
-                    <h1 class="jumbotron-heading">Album example</h1>
-                    <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
-                    <div class="row">
-                            <div class="col-md-3">
-                            <label for="quiero">Quiero</label>
-                                <select id="transaccion">
-                                 </select>
+            <div id="login">
+                    <div class="container">
+                            <div class="main">
+                            <form class="form" method="post" action="#">
+                            <h2>Create Login Form Using jQuery</h2>
+                            <label>Email :</label>
+                            <input type="text" name="demail" id="email">
+                            <label>Password :</label>
+                            <input type="password" name="password" id="password">
+                            <input type="button" name="login" id="login" value="Login">
+                            </form>
                             </div>
-                        <div class="col-md-3">
-                            <label for="raza">Raza</label>
-                            <select id="raza">
-                                <option id='0'>No importa</option>
-                            </select>
+                            </div>
+            </div>
+            <div id="register">
+                    <form>
+                        <label for="register">Registrate</label>
+                        <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                            </div>
+                        <div class="form-group">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
                         </div>
-                 
-                        <div class="col-md-3">
-                            <label for="localidad">En</label>
-                            <select id="localidad">
-                                <option id='0'>No importa</option>
-                            </select>
-                            <select id="departamento">
-                            </select>
+                        <div class="form-group">
+                            <label for="inputPassword">Password</label>
+                            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <label for="sexo">sexo</label>
-                        <select id="sexo">
-                            <option id='0'>No importa</option>
-                        </select>
-                    </div> <br>
-                    <div class="row">
-                        <button type="button" class="btn btn-primary btn-block" a href="#" >Buscar</button>
-                    </div>
-                </div>
-            </section>
+                        <div class="form-group">
+                                <div class="col-md-3">
+                                        <label for="localidad">En</label>
+                                        <select id="localidad">
+                                            <option id='0'>No importa</option>
+                                        </select>
+                                        <select id="departamento">
+                                        </select>
+                                    </div>
+                            </div>
+                        <div class="checkbox">
+                       </div>
+                    <button type="submit" class="btn btn-primary">Registrarse</button>
+                </form>
+            </div>
         </main>
     <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
