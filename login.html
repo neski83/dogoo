@@ -120,7 +120,27 @@
                     
                 </div>
             </section>
-        </main>
+   
+	<div id="pantalla">
+		<form name="formulario"  method="post" action="main.html">
+			<p> Ingrese sus datos</p> <br>
+			<div id="pantalla1">
+			<label>Email*:</label>
+			<input type="text" "Campo requerido" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" name="email" id="email" required/> </p>
+			<label>Contrase&ntilde;a*:</label>
+			<input title="Campo requerido" type="password" name="password" id="password" maxlength="9" required/> </p>			
+			
+			
+   			<label id="cr">*Campos Obligatorios</label></p> 
+   			<div id="boton">
+			<input id="boton" type="submit" class="btn1" value="Siguiente" onclick="return validarPass()">
+			<input id="boton" type="reset" class="btn1" value="Cancelar">
+			</div>
+			</div>
+		</form>
+	</div>
+</body>
+
     <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -129,6 +149,28 @@
     <script src="./libs/services.js/raza/RazaService.js"></script>
     <script src="./libs/services.js/provincias/ProvinciasService.js"></script>
     <script src="./libs/services.js/departamentos/DepartamentosService.js"></script>
-    <script src="./libs/services.js/transaccion/TransaccionService.js"></script>  
-  </body>
+    <script src="./libs/services.js/transaccion/TransaccionService.js"></script> 
+    <script src="./libs/services.js/user/login.js "></script> 
+        <script type="text/javascript">
+	
+            function accesosIn (){
+                    document.getElementById("in").innerHTML = "Tu Perfil";
+        
+            }
+            function accesosMsg (){
+                    document.getElementById("msg").innerHTML = "Mensajes";
+        
+            }
+            function accesosOut (){
+                    document.getElementById("out").innerHTML = "Salir";
+        
+            }
+            function mouseOut(){
+                    document.getElementById("in").innerHTML = "";
+                    document.getElementById("msg").innerHTML = "";
+                    document.getElementById("out").innerHTML = "";		
+            }	
+        </script>
+     
+	
 </html>

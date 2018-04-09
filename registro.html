@@ -120,15 +120,63 @@
                     
                 </div>
             </section>
-        </main>
-    <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
-    <script src="./libs/services.js/sex/SexService.js"></script>
-    <script src="./libs/services.js/raza/RazaService.js"></script>
-    <script src="./libs/services.js/provincias/ProvinciasService.js"></script>
-    <script src="./libs/services.js/departamentos/DepartamentosService.js"></script>
-    <script src="./libs/services.js/transaccion/TransaccionService.js"></script>  
-  </body>
+   
+			<form name="formulario"  method="post" action="main.html">
+				<p> Ingrese sus datos</p> <br>
+				<div id="pantalla1">
+				<label>Nombre*:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+				<input title="Campo requerido" type="text" name="nombre" id="nombre" maxlength="20" autofocus required/> </p>
+				
+				<label>Apellido*:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+				<input title="Campo requerido" type="text" name="apellido" id="apellido" maxlength="20" required/> </p>
+				
+				<label>Email*:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</label>
+				<input type="email" name="email" id="email" required/> </p>
+				<label>Contrase&ntilde;a*:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+				<input title="Campo requerido" type="password" name="password" id="password" maxlength="9" required/> </p>			
+				
+				<label>Repetir contrase&ntilde;a*:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
+				<input title="Campo requerido" type="password" name="password1" id="password1" maxlength="9" required/> </p>
+				<br>
+				   
+				   <label id="cr">*Campos Obligatorios</label></p> <br>
+				   <a href="login.html">Ya estoy registrado</a>
+				   <div id="boton">
+				<input id="boton" type="submit" class="btn" value="Siguiente" onclick="return validarPass()">
+				<input id="boton" type="reset" class="btn" value="Cancelar">
+				</div>
+	
+			</form>
+		</div>
+		</main>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="main.js"></script>
+        <script src="./libs/services.js/sex/SexService.js"></script>
+        <script src="./libs/services.js/raza/RazaService.js"></script>
+        <script src="./libs/services.js/provincias/ProvinciasService.js"></script>
+        <script src="./libs/services.js/departamentos/DepartamentosService.js"></script>
+        <script src="./libs/services.js/transaccion/TransaccionService.js"></script> 
+        <script src="./libs/services.js/user/registro.js"></script> 
+
+        <script type="text/javascript">
+			var envio = 1;
+			var x = document.getElementById('password');
+			var y = document.getElementById('password1');
+		
+			function validarPass{
+				if (x!=y) {
+					alert(contrasentildea invalida);
+				};
+				if (envio == 1){
+						return true;
+					}else{
+		
+							return false
+						}
+				}
+		</script>
+	</body>
 </html>
